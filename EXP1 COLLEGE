@@ -1,0 +1,81 @@
+CREATE DATABASE college;
+CREATE TABLE student(rollno int NOT NULL,
+    -> Name varchar(100) NOT NULL,
+    -> DOB date NOT NULL,
+    -> Address varchar(100) NOT NULL,
+    -> phno varchar(100) NOT NULL,
+    -> Bloodgroup varchar(20) NOT NULL);
+ SHOW TABLES;
++-------------------+
+| Tables_in_college |
++-------------------+
+| course            |
+| student           |
++-------------------+
+CREATE TABLE course(course_id int NOT NULL,
+    -> course_name varchar(100) NOT NULL,
+    -> course_duration varchar(50) NOT NULL);
+DESCRIBE course;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| course_id       | int(11)      | NO   |     | NULL    |       |
+| course_name     | varchar(100) | NO   |     | NULL    |       |
+| course_duration | varchar(50)  | NO   |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+
+DESCRIBE student;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| rollno     | int(11)      | NO   |     | NULL    |       |
+| Name       | varchar(100) | NO   |     | NULL    |       |
+| DOB        | date         | NO   |     | NULL    |       |
+| Address    | varchar(100) | NO   |     | NULL    |       |
+| phno       | varchar(100) | NO   |     | NULL    |       |
+| Bloodgroup | varchar(20)  | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+ALTER TABLE student
+    -> DROP COLUMN Bloodgroup;
+DESC student;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| rollno  | int(11)      | NO   |     | NULL    |       |
+| Name    | varchar(100) | NO   |     | NULL    |       |
+| DOB     | date         | NO   |     | NULL    |       |
+| Address | varchar(100) | NO   |     | NULL    |       |
+| phno    | varchar(100) | NO   |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+
+ALTER TABLE student ADD Adhar_no varchar(50) NOT NULL;
+DESC student;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| rollno   | int(11)      | NO   |     | NULL    |       |
+| Name     | varchar(100) | NO   |     | NULL    |       |
+| DOB      | date         | NO   |     | NULL    |       |
+| Address  | varchar(100) | NO   |     | NULL    |       |
+| phno     | varchar(100) | NO   |     | NULL    |       |
+| Adhar_no | varchar(50)  | NO   |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+ ALTER TABLE student MODIFY  COLUMN phno int;
+ DESC student;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| rollno   | int(11)      | NO   |     | NULL    |       |
+| Name     | varchar(100) | NO   |     | NULL    |       |
+| DOB      | date         | NO   |     | NULL    |       |
+| Address  | varchar(100) | NO   |     | NULL    |       |
+| phno     | int(11)      | YES  |     | NULL    |       |
+| Adhar_no | varchar(50)  | NO   |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+DROP TABLE student;
+Query OK, 0 rows affected (0.20 sec)
+
+ DROP DATABASE college;
+Query OK, 0 rows affected (0.01 sec)
+Footer
