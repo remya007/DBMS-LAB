@@ -1,0 +1,33 @@
+create database bank;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use bank;
+Database changed
+create table customer (cid varchar(5) primary key,cname varchar(30),city varchar(30));
+mysql> desc customer;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| cid   | varchar(5)  | NO   | PRI | NULL    |       |
+| cname | varchar(30) | YES  |     | NULL    |       |
+| city  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+CREATE TABLE branch
+    ->    (
+    ->     bid VARCHAR(6),
+    ->     bname VARCHAR(30),
+    ->     bcity VARCHAR(30),
+    ->     CONSTRAINT branch_bid_pk PRIMARY KEY(bid) 
+    ->    );
+ create table account(ac_no varchar(5) primary key,cid varchar(5),bid varchar(5),amount varchar(10),adate varchar(10), foreign key(cid) references customer(cid) ,foreign key(bid) references branch (bid));
+ desc account;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ac_no  | varchar(5)  | NO   | PRI | NULL    |       |
+| cid    | varchar(5)  | YES  | MUL | NULL    |       |
+| bid    | varchar(5)  | YES  | MUL | NULL    |       |
+| amount | varchar(10) | YES  |     | NULL    |       |
+| adate  | varchar(10) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
