@@ -31,3 +31,4 @@ CREATE TABLE branch
 | amount | varchar(10) | YES  |     | NULL    |       |
 | adate  | varchar(10) | YES  |     | NULL    |       |
 +--------+-------------+------+-----+---------+-------+
+CREATE TABLE Borrower (loanno INT PRIMARY KEY,cid INTbid INTamount FLOAT,FOREIGN KEY (cid) REFERENCES Customer(cid),FOREIGN KEY (bid) REFERENCES Branch(bid));
