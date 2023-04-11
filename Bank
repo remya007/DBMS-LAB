@@ -31,4 +31,6 @@ CREATE TABLE branch
 | amount | varchar(10) | YES  |     | NULL    |       |
 | adate  | varchar(10) | YES  |     | NULL    |       |
 +--------+-------------+------+-----+---------+-------+
-CREATE TABLE Borrower (loanno INT PRIMARY KEY,cid INTbid INTamount FLOAT,FOREIGN KEY (cid) REFERENCES Customer(cid),FOREIGN KEY (bid) REFERENCES Branch(bid));
+
+create table borrower(loanno varchar(8) primary key,cid varchar(5),amount varchar(10),bid varchar(6),CONSTRAINT borrower_cid_fk FOREIGN KEY(cid) REFERENCES customer(cid),CONSTRAINT borrower_bid_fk FOREIGN KEY(bid) REFERENCES branch(bid));
+Query OK, 0 rows affected (0.38 sec)
