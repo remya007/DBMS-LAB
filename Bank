@@ -189,6 +189,21 @@ Query OK, 1 row affected (0.03 sec)
 
 mysql> insert into account values(314,103,112,50000,17-8-2001);
 Query OK, 1 row affected (0.03 sec)
+insert into account values(777,201,121,500000,2-2-2011);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into account values(615,202,122,90000,9-12-2009);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into account values(767,203,123,1000000,8-3-2003);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into account values(934,204,124,4000,10-3-2004);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into account values(943,205,127,5000,10-3-2005);
+Query OK, 1 row affected (0.03 sec)
+
 
 
 
